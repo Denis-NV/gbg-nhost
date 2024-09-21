@@ -1,0 +1,109 @@
+table:
+  name: order_product
+  schema: public
+object_relationships:
+  - name: order
+    using:
+      foreign_key_constraint_on: order_id
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id
+insert_permissions:
+  - role: general_manager
+    permission:
+      check: {}
+      columns:
+        - order_id
+        - product_id
+        - quantity
+    comment: ""
+  - role: order_manager
+    permission:
+      check: {}
+      columns:
+        - order_id
+        - product_id
+        - quantity
+    comment: ""
+select_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - created_at
+        - id
+        - order_id
+        - product_id
+        - quantity
+        - updated_at
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: logistics_manager
+    permission:
+      columns:
+        - created_at
+        - id
+        - order_id
+        - product_id
+        - quantity
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: order_manager
+    permission:
+      columns:
+        - created_at
+        - id
+        - order_id
+        - product_id
+        - quantity
+        - updated_at
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+  - role: production_manager
+    permission:
+      columns:
+        - created_at
+        - id
+        - order_id
+        - product_id
+        - quantity
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - created_at
+        - id
+        - order_id
+        - product_id
+        - quantity
+        - updated_at
+      filter: {}
+    comment: ""
+update_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - quantity
+      filter: {}
+      check: null
+    comment: ""
+  - role: order_manager
+    permission:
+      columns:
+        - quantity
+      filter: {}
+      check: null
+    comment: ""
+delete_permissions:
+  - role: general_manager
+    permission:
+      filter: {}
+    comment: ""
+  - role: order_manager
+    permission:
+      filter: {}
+    comment: ""

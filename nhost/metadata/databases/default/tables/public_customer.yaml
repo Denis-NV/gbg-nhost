@@ -1,0 +1,134 @@
+table:
+  name: customer
+  schema: public
+object_relationships:
+  - name: district
+    using:
+      foreign_key_constraint_on: district_id
+array_relationships:
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: customer_id
+        table:
+          name: order
+          schema: public
+insert_permissions:
+  - role: general_manager
+    permission:
+      check: {}
+      columns:
+        - address
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - is_active
+        - name
+    comment: ""
+  - role: order_manager
+    permission:
+      check: {}
+      columns:
+        - address
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - is_active
+        - name
+    comment: ""
+select_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - address
+        - created_at
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - id
+        - is_active
+        - name
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: logistics_manager
+    permission:
+      columns:
+        - address
+        - created_at
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - id
+        - is_active
+        - name
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: order_manager
+    permission:
+      columns:
+        - address
+        - created_at
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - id
+        - is_active
+        - name
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: production_manager
+    permission:
+      columns:
+        - address
+        - created_at
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - id
+        - is_active
+        - name
+        - updated_at
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - address
+        - created_at
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - id
+        - is_active
+        - name
+        - updated_at
+      filter: {}
+    comment: ""
+update_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - address
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - is_active
+        - name
+      filter: {}
+      check: {}
+    comment: ""
+  - role: order_manager
+    permission:
+      columns:
+        - address
+        - delivery_end_time
+        - delivery_start_time
+        - district_id
+        - is_active
+        - name
+      filter: {}
+      check: {}
+    comment: ""

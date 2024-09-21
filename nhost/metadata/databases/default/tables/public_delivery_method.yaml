@@ -1,0 +1,57 @@
+table:
+  name: delivery_method
+  schema: public
+array_relationships:
+  - name: orders
+    using:
+      foreign_key_constraint_on:
+        column: delivery_method_id
+        table:
+          name: order
+          schema: public
+select_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+    comment: ""
+  - role: logistics_manager
+    permission:
+      columns:
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+    comment: ""
+  - role: order_manager
+    permission:
+      columns:
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+    comment: ""
+  - role: production_manager
+    permission:
+      columns:
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+    comment: ""
+  - role: user
+    permission:
+      columns:
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+    comment: ""
