@@ -36,8 +36,8 @@ version = '0.29.2'
 mode = 'disabled'
 
 [auth.redirections]
-clientUrl = 'https://staging-grainbygrain.netlify.app'
-allowedUrls = ['https://staging-grainbygrain.netlify.app']
+clientUrl = 'https://grainbygrain.netlify.app'
+allowedUrls = ['https://grainbygrain.netlify.app']
 
 [auth.signUp]
 enabled = true
