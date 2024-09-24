@@ -120,3 +120,16 @@ array_relationships:
         table:
           name: user_providers
           schema: auth
+select_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - created_at
+        - default_role
+        - disabled
+        - email
+        - id
+        - new_email
+        - updated_at
+      filter: {}
+    comment: ""
