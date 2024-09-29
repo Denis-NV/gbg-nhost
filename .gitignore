@@ -2,5 +2,3 @@
 .secrets
 .env
 .DS_Store
-initdb.d
-data

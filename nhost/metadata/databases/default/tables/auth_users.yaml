@@ -127,7 +127,9 @@ select_permissions:
         - created_at
         - default_role
         - disabled
+        - display_name
         - email
+        - email_verified
         - id
         - new_email
         - updated_at
