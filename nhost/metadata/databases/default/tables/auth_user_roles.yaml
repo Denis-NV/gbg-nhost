@@ -42,3 +42,11 @@ select_permissions:
         - role
       filter: {}
     comment: ""
+update_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - role
+      filter: {}
+      check: null
+    comment: ""
