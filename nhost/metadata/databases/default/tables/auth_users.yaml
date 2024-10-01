@@ -135,3 +135,24 @@ select_permissions:
         - updated_at
       filter: {}
     comment: ""
+update_permissions:
+  - role: general_manager
+    permission:
+      columns:
+        - active_mfa_type
+        - avatar_url
+        - default_role
+        - disabled
+        - display_name
+        - email
+        - email_verified
+        - is_anonymous
+        - locale
+        - metadata
+        - new_email
+        - phone_number
+        - phone_number_verified
+        - ticket
+      filter: {}
+      check: {}
+    comment: ""
